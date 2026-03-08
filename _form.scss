@@ -1,0 +1,520 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+a,
+input,
+button {
+  font-family: "Montserrat", sans-serif;
+}
+
+.container{
+  display: flex;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  justify-content: flex-end;
+}
+
+
+body {
+ font-family: "Montserrat", sans-serif;
+ font-size: 16px;
+ display:block
+}
+
+
+
+.select-box
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+     margin-top: 37px;
+
+     align-items: baseline;
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+ 
+}
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+ 
+}
+
+.breadcrumbs__link {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+
+.breadcrumbs__link--current {
+    color: #666;
+    pointer-events: none;
+}
+
+.breadcrumbs__separator {
+    color: #999;
+}
+
+
+
+.selectors
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.sort-select {
+  margin-right:32px;  
+
+   position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+}
+
+.sort-select__dropdown {
+   padding: 9px 56px 11px 23px;
+   border: 1px solid #C4C4C4;
+    border-radius: 20px;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    width: 227px;
+    height: 40px;
+    line-height: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='9' viewBox='0 0 18 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.66016 8.25L-9.84609e-05 -1.63133e-06L17.3204 -1.17124e-07L8.66016 8.25Z' fill='black'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 18px 9px;
+}
+
+.filter-select {
+
+     position: relative;
+
+}
+
+
+
+.filter-select__dropdown {
+   padding: 9px 56px 11px 23px;
+   border: 1px solid #C4C4C4;
+    border-radius: 20px;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    line-height: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='9' viewBox='0 0 18 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.66016 8.25L-9.84609e-05 -1.63133e-06L17.3204 -1.17124e-07L8.66016 8.25Z' fill='black'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 18px 9px;
+}
+.button__box{
+      display: flex;
+    align-items: end;
+    justify-content: flex-end;
+
+}
+
+.button {
+  border: 1px solid #040404;
+  border-radius: 20px;
+  padding: 10px 46.5px;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: center;
+}
+
+.filtering-form__button {
+  align-self: flex-start;
+}
+
+.filter-button-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.filtering-form {
+    position: absolute;
+    top: calc(100% + 14px);
+    right: 0;
+    display: flex;
+    gap: 32px;
+    background-color: #FFFFFF;
+    box-shadow: 8px 4px 67px -12px rgba(0, 0, 0, 0.32);
+    padding: 40px 40px;
+    z-index: 1000;
+    flex-direction: column;
+    /* align-items: flex-end; */
+    width: 541px;
+
+}
+
+
+.filtering-form__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 32px 65px;
+  min-width: 395px;
+  max-height: 524px;
+  align-content: flex-start;
+}
+
+.filtering-form__fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  max-width: 190px;
+}
+.filtering-form__legend
+{
+margin-bottom: 14px;
+font-family: Montserrat;
+font-weight: 500;
+font-size: 16px;
+line-height: 100%;
+vertical-align: middle;
+}
+
+
+.radio__group
+{
+  display: flex;
+  flex-direction: column;
+  border: none;
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 14px;
+   line-height: 100%;
+    letter-spacing: 0%;
+}
+.radio__input {
+    position: absolute;
+    opacity: 0;
+}
+
+/* Стили для контейнера радио-кнопок */
+.radio {
+    position: relative;
+    margin-bottom: 14px;
+}
+.radio:last-child {
+    margin-bottom: 0;
+}
+
+/* Стили для меток */
+.radio__label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.4;
+    padding-left: 29px;
+    position: relative;
+}
+
+/* Внешний круг - белый с серым контуром по умолчанию */
+.radio__label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    border: 1px solid #888888;
+    border-radius: 15px;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+/* Галочка - скрыта по умолчанию */
+.radio__label::after {
+    content: "";
+    position: absolute;
+    left: 4px; /* Подправляем позицию для SVG */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.353516 2.72363L3.853516 6.22363L6.853516 0.223633' stroke='black'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+}
+
+/* Состояние выбора - белый круг с чёрным контуром и чёрной галочкой */
+.radio__input:checked + .radio__label::before {
+    background: #ffffff;
+    border-color: #000000;
+}
+
+.radio__input:checked + .radio__label::after {
+    opacity: 1;
+}
+
+/* Состояние ховера */
+.radio__input:not(:checked):hover + .radio__label::before {
+    border-color: #666666;
+}
+
+
+
+/* Общие стили для fieldset и legend */
+
+.filtering-form__legend {
+  font-family: Montserrat;
+font-weight: 500;
+font-size: 16px;
+line-height: 100%;
+letter-spacing: 0%;
+vertical-align: middle;
+}
+
+/* Скрываем стандартный чекбокс */
+.checkbox__input {
+    display: none;
+}
+
+/* ===== СТИЛИ ДЛЯ ЦВЕТНЫХ ЧЕКБОКСОВ ===== */
+.color-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 14px;
+    max-width: 215px;
+}
+
+/* Стили ТОЛЬКО для цветных квадратиков */
+.color-options .checkbox__input + .checkbox__label {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    position: relative;
+}
+
+/* Цвета квадратиков */
+.checkbox__input--white + .checkbox__label { background-color: #ffffff; }
+.checkbox__input--black + .checkbox__label { background-color: #000000; }
+.checkbox__input--gray + .checkbox__label { background-color: #737373; }
+.checkbox__input--red + .checkbox__label { background-color: #FF0000; }
+.checkbox__input--orange + .checkbox__label { background-color: #FF7A41; }
+.checkbox__input--yellow + .checkbox__label { background-color: #F2CB01; }
+.checkbox__input--green + .checkbox__label { background-color: #00BF2A; }
+.checkbox__input--teal + .checkbox__label { background-color: #1CCC97; }
+.checkbox__input--azure + .checkbox__label { background-color: #009FE3; }
+.checkbox__input--blue + .checkbox__label { background-color: #000AF8; }
+.checkbox__input--violet + .checkbox__label { background-color: #6710D6; }
+.checkbox__input--purple + .checkbox__label { background-color: #9D0DB5; }
+.checkbox__input--lavender + .checkbox__label { background-color: #D89AFF; }
+.checkbox__input--pink + .checkbox__label { background-color: #FF65A6; }
+
+/* Галочка для ВСЕХ цветных чекбоксов - только чёрная SVG */
+.color-options .checkbox__input:checked + .checkbox__label::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.353516 2.72363L3.853516 6.22363L6.853516 0.223633' stroke='black'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Состояние при выборе для цветных */
+.color-options .checkbox__input:checked + .checkbox__label {
+    border: 1px solid #333333;
+}
+
+/* Ховер эффект для цветных */
+.color-options .checkbox__input + .checkbox__label:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* ===== СТИЛИ ДЛЯ ТЕКСТОВЫХ ЧЕКБОКСОВ ===== */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.checkbox-group__item {
+    display: flex;
+    align-items: center;
+}
+
+/* Стили ТОЛЬКО для текстовых чекбоксов */
+.checkbox-group .checkbox__input + .checkbox__label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.4;
+
+}
+
+/* Кастомный чекбокс для текстовых */
+.checkbox-group .checkbox__input + .checkbox__label::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    margin-right: 14px;
+    background: white;
+}
+
+/* Состояние выбранного текстового чекбокса */
+.checkbox-group .checkbox__input:checked + .checkbox__label::before {
+    border-color: #000000;
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.353516 2.72363L3.853516 6.22363L6.853516 0.223633' stroke='black'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 8px;
+}
+
+
+/* Стили для контейнера ползунков */
+.range {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.range__label {
+  white-space: pre; 
+  font-family: Montserrat;
+font-weight: 400;
+font-style: Regular;
+font-size: 14px;
+line-height: 100%;
+color:#000000;
+}
+
+/* Контейнер для ползунков - НОРМАЛЬНЫЕ размеры */
+.range__slider {
+    position: relative;
+    height: 20px; /* нормальная высота */
+    width: 200px; /* нормальная ширина */
+    display: block;
+}
+
+/* Базовые стили для ползунков */
+.range__input {
+    position: absolute;
+    width: 100%; /* занимает всю ширину контейнера */
+    height: 20px; /* нормальная высота для кликабельной области */
+    overflow: visible; /* убираем hidden */
+    outline: none;
+    margin: 0;
+    top: 0;
+    left: 0;
+}
+
+.range__input,
+.range__input::-webkit-slider-runnable-track,
+.range__input::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background: none;
+}
+
+.range__input::-webkit-slider-runnable-track{
+    width: 100%; /* занимает всю ширину */
+    height: 1px;
+    background: #000000;
+}
+
+.range__input:nth-child(2)::-webkit-slider-runnable-track {
+    background: none;
+}
+
+.range__input::-webkit-slider-thumb {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    margin-top: -4px; /* центрируем по вертикали */
+    background: #000000; /* ЧЁРНЫЙ фон */
+    border: 1px solid #000000;
+    border-radius: 25px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.range__input::-webkit-slider-thumb:active {
+    cursor: grabbing;
+}
+
+.range__input:nth-child(1)::-webkit-slider-thumb:active {
+    z-index: 2;
+}
+
+/* Позиционирование ползунков */
+.range__slider input {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+
+
+/* Для фокуса */
+.sort-select__dropdown:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+ /* Текст поверх изображений */
+.alt-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 34px;
+  font-weight: 600;
+   pointer-events: none;
+}
+
+
+
+
+
+
